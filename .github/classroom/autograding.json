@@ -1,0 +1,304 @@
+{
+  "tests": [
+    {
+      "name": "1.1. DynamicArray constructor",
+      "setup": "",
+      "run": "ctest -VVV --output-on-failure --test-dir build -R \"DynamicArray::DynamicArray\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "1.2. DynamicArray::Get",
+      "setup": "",
+      "run": "ctest -VVV --output-on-failure --test-dir build -R \"DynamicArray::Get\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "1.3. DynamicArray::Set",
+      "setup": "",
+      "run": "ctest -VVV --output-on-failure --test-dir build -R \"DynamicArray::Set\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "1.4. DynamicArray::IndexOf",
+      "setup": "",
+      "run": "ctest -VVV --output-on-failure --test-dir build -R \"DynamicArray::IndexOf\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "1.5. DynamicArray::Contains",
+      "setup": "",
+      "run": "ctest -VVV --output-on-failure --test-dir build -R \"DynamicArray::Contains\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "1.6. DynamicArray::Resize",
+      "setup": "",
+      "run": "ctest -VVV --output-on-failure --test-dir build -R \"DynamicArray::Resize\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "1.7. DynamicArray::Add",
+      "setup": "",
+      "run": "ctest -VVV --output-on-failure --test-dir build -R \"DynamicArray::Add\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "1.8. DynamicArray::Insert",
+      "setup": "",
+      "run": "ctest -VVV --output-on-failure --test-dir build -R \"DynamicArray::Insert\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "1.9. DynamicArray::Remove",
+      "setup": "",
+      "run": "ctest -VVV --output-on-failure --test-dir build -R \"DynamicArray::Remove\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "1.10. DynamicArray::Clear",
+      "setup": "",
+      "run": "ctest -VVV --output-on-failure --test-dir build -R \"DynamicArray::Clear\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "2.1. LinkedList constructor",
+      "setup": "",
+      "run": "ctest -VVV --output-on-failure --test-dir build -R \"LinkedList::LinkedList\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "2.2. LinkedList::Add",
+      "setup": "",
+      "run": "ctest -VVV --output-on-failure --test-dir build -R \"LinkedList::Add\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "2.3. LinkedList::FindNode",
+      "setup": "",
+      "run": "ctest -VVV --output-on-failure --test-dir build -R \"LinkedList::FindNode\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "2.4. LinkedList::Get",
+      "setup": "",
+      "run": "ctest -VVV --output-on-failure --test-dir build -R \"LinkedList::Get\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "2.5. LinkedList::Set",
+      "setup": "",
+      "run": "ctest -VVV --output-on-failure --test-dir build -R \"LinkedList::Set\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "2.6. LinkedList::IndexOf",
+      "setup": "",
+      "run": "ctest -VVV --output-on-failure --test-dir build -R \"LinkedList::IndexOf\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "2.7. LinkedList::Contains",
+      "setup": "",
+      "run": "ctest -VVV --output-on-failure --test-dir build -R \"LinkedList::Contains\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "2.8. LinkedList::Insert",
+      "setup": "",
+      "run": "ctest -VVV --output-on-failure --test-dir build -R \"LinkedList::Insert\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "2.9. LinkedList::Remove",
+      "setup": "",
+      "run": "ctest -VVV --output-on-failure --test-dir build -R \"LinkedList::Remove\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "2.10. LinkedList::Clear",
+      "setup": "",
+      "run": "ctest -VVV --output-on-failure --test-dir build -R \"LinkedList::Clear\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "3.1. ArrayStack constructor",
+      "setup": "",
+      "run": "ctest -VVV --output-on-failure --test-dir build -R \"ArrayStack::ArrayStack\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "3.2. ArrayStack::Peek",
+      "setup": "",
+      "run": "ctest -VVV --output-on-failure --test-dir build -R \"ArrayStack::Peek\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "3.3. ArrayStack::Resize",
+      "setup": "",
+      "run": "ctest -VVV --output-on-failure --test-dir build -R \"ArrayStack::Resize\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "3.4. ArrayStack::Push",
+      "setup": "",
+      "run": "ctest -VVV --output-on-failure --test-dir build -R \"ArrayStack::Push\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "3.5. ArrayStack::Pop",
+      "setup": "",
+      "run": "ctest -VVV --output-on-failure --test-dir build -R \"ArrayStack::Pop\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "3.6. ArrayStack::Clear",
+      "setup": "",
+      "run": "ctest -VVV --output-on-failure --test-dir build -R \"ArrayStack::Clear\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "4.1. LinkedQueue constructor",
+      "setup": "",
+      "run": "ctest -VVV --output-on-failure --test-dir build -R \"LinkedQueue::LinkedQueue\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "4.2. LinkedQueue::Enqueue",
+      "setup": "",
+      "run": "ctest -VVV --output-on-failure --test-dir build -R \"LinkedQueue::Enqueue\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "4.3. LinkedQueue::Dequeue",
+      "setup": "",
+      "run": "ctest -VVV --output-on-failure --test-dir build -R \"LinkedQueue::Dequeue\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 1
+    },
+    {
+      "name": "4.4. LinkedQueue::Clear",
+      "setup": "",
+      "run": "ctest -VVV --output-on-failure --test-dir build -R \"LinkedQueue::Clear\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 5,
+      "points": 1
+    }
+  ]
+}
