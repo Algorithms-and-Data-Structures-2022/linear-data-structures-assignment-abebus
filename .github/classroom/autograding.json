@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "This is an empty test-case!",
+      "setup": "echo \"Configuring... Wait a minute...\"",
+      "run": "echo \"Success! You got 1 point!\"",
+      "input": "",
+      "output": "",
+      "comparison": "exact",
+      "timeout": 1,
+      "points": 1
+    }
+  ]
+}
