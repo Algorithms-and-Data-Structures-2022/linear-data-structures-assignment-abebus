@@ -9,34 +9,93 @@ namespace assignment {
   }
 
   void LinkedQueue::Enqueue(int value) {
-    // Write your code here ...
+
+    // создаем "новый" узел
+    auto* node = new Node(value);
+
+    if (front_ == nullptr) {
+      // очередь пустая, инициализируем начальный узел
+      front_ = node;
+    } else {
+      // иначе, новый узел "ставим в очередь" за "конечным" узлом
+      back_->next = node;
+    }
+
+    // обновляем конечный узел
+    back_ = node;
+
+    // увеличиваем размер очереди
+    size_ += 1;
   }
 
   bool LinkedQueue::Dequeue() {
-    // Write your code here ...
-    return false;
+
+    // операция невозможна (пустая очередь)
+    if (front_ == nullptr) {
+      return false;
+    }
+
+    // указатель на "начальный" узел
+    Node* remove_node = front_;
+
+    //  начальный узел "выходит из очереди"
+    front_ = front_->next;
+
+    // высвобождаем память под вышедший из очереди узел
+    delete remove_node;
+
+    // если очередь пустая, то обнуляем указатель на конечный узел
+    if (front_ == nullptr) {
+      back_ = nullptr;
+    }
+
+    // уменьшаем размер очереди
+    size_ -= 1;
+
+    return true;
   }
 
   void LinkedQueue::Clear() {
-    // Write your code here ...
+
+    // проходимся по всем узлам очереди и высвобождаем память
+    for (Node* node = front_; node != nullptr; /* ... */) {
+      Node* remove_node = node;
+      node = node->next;
+      delete remove_node;
+    }
+
+    // обнуляем поля
+    front_ = nullptr;
+    back_ = nullptr;
+    size_ = 0;
   }
 
   std::optional<int> LinkedQueue::front() const {
-    // Write your code here ...
-    return std::nullopt;
+
+    // проверка наличия начального узла
+    if (front_ == nullptr) {
+      return std::nullopt;
+    }
+
+    return front_->value;
   }
 
   std::optional<int> LinkedQueue::back() const {
-    // Write your code here ...
-    return std::nullopt;
+
+    // проверка наличия "конечного" узла
+    if (back_ == nullptr) {
+      return std::nullopt;
+    }
+
+    return back_->value;
   }
 
   bool LinkedQueue::IsEmpty() const {
-    return false;
+    return front_ == nullptr;
   }
 
   int LinkedQueue::size() const {
-    return 0;
+    return size_;
   }
 
   // ДЛЯ ТЕСТИРОВАНИЯ
