@@ -12,39 +12,27 @@ namespace assignment {
       throw std::invalid_argument("capacity is not positive");
     }
 
-    // устанавливаем емкость массива
     capacity_ = capacity;
-
-    // выделяем участок памяти под массив
     data_ = new int[capacity];
-
-    // инициализируем элементы массива нулевым значением
     std::fill(data_, data_ + capacity, 0);
   }
 
   DynamicArray::~DynamicArray() {
 
-    // высвобождаем выделенную память
     delete[] data_;
-
-    // обнуляем поля
-    size_ = 0;
+    Clear();
     capacity_ = 0;
     data_ = nullptr;
   }
 
   void DynamicArray::Add(int value) {
 
-    // расширяем емкость массива при заполнении
     if (size_ == capacity_) {
       Resize(capacity_ + kCapacityGrowthCoefficient);
     }
 
-    // добавляем элемент в конец массива
     data_[size_] = value;
-
-    // увеличиваем размер массива
-    size_ += 1;
+    size_++;
   }
 
   bool DynamicArray::Insert(int index, int value) {
@@ -53,7 +41,7 @@ namespace assignment {
     // index = size => добавление в конец массива
 
     // проверка на выход за границы позиции вставки
-    if (index < 0 || index > size_) {
+    if (index < 0 or index > size_) {
       return false;
     }
 
@@ -62,65 +50,43 @@ namespace assignment {
       Resize(capacity_ + kCapacityGrowthCoefficient);
     }
 
-    // сдвигаем все элементы правее позиции вставки на 1 вправо
-    std::copy(data_ + index, data_ + size_, data_ + index + 1);
-
-    // вставляем элемент по индексу
+    // мы это сделали в ресайзе std::copy(data_ + index, data_ + size_, data_ + index + 1);
     data_[index] = value;
-
-    // увеличиваем размер массива
-    size_ += 1;
-
+    size_++;
     return true;
   }
 
   bool DynamicArray::Set(int index, int new_value) {
 
-    // проверка на выход за пределы массива
-    if (index < 0 || index >= size_) {
+    if (index < 0 or index >= size_) {
       return false;
     }
-
-    // устанавливаем значение элемента по индексу
     data_[index] = new_value;
-
     return true;
   }
 
   std::optional<int> DynamicArray::Remove(int index) {
 
-    // проверка на выход за пределы массива
-    if (index < 0 || index >= size_) {
+    if (index < 0 or index >= size_) {
       return std::nullopt;
     }
 
-    // сохраняем значение удаляемого элемента
     const int removed_elem = data_[index];
 
-    // сдвигаем все элементы справа от позиции удаляемого элемента на 1 ячейку влево
     std::copy(data_ + index + 1, data_ + size_, data_ + index);
-
-    // уменьшаем размер массива
-    size_ -= 1;
-
-    // возвращаем значение удаленного элемента
+    size_--;
     return removed_elem;
   }
 
   void DynamicArray::Clear() {
-
-    // обнуляем размер массива
     size_ = 0;
   }
 
   std::optional<int> DynamicArray::Get(int index) const {
 
-    // проверка на выход за пределы массива
-    if (index < 0 || index >= size_) {
+    if (index < 0 or index >= size_) {
       return std::nullopt;
     }
-
-    // возвращаем значение элемента по индексу
     return data_[index];
   }
 
@@ -160,21 +126,15 @@ namespace assignment {
       return false;
     }
 
-    // выделяем "новый" блок памяти большего размера
     auto* new_data = new int[new_capacity];
 
-    // копируем данные из "текущего" блока памяти в "новый"
     std::copy(data_, data_ + capacity_, new_data);
 
-    // высвобождаем "текущий" блок памяти
     delete[] data_;
 
-    // сохраняем адрес на "новый" блок памяти
+
     data_ = new_data;
-
-    // устанавливаем "новую" емкость массива
     capacity_ = new_capacity;
-
     return true;
   }
 

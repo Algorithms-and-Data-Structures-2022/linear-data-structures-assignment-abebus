@@ -21,11 +21,8 @@ namespace assignment {
       back_->next = node;
     }
 
-    // обновляем "конечный" узел
     back_ = node;
-
-    // увеличиваем размер списка
-    size_ += 1;
+    size_++;
   }
 
   bool LinkedList::Insert(int index, int value) {
@@ -65,7 +62,7 @@ namespace assignment {
       }
     }
 
-    size_ += 1;
+    size_++;
 
     return true;
   }
@@ -86,7 +83,7 @@ namespace assignment {
   std::optional<int> LinkedList::Remove(int index) {
 
     // проверка на выход за пределы списка
-    if (index < 0 || index >= size_) {
+    if (index < 0 or index >= size_) {
       return std::nullopt;
     }
 
@@ -102,7 +99,7 @@ namespace assignment {
       delete remove_node;
 
       // уменьшаем размер списка
-      size_ -= 1;
+      size_--;
 
       return remove_value;
     }
@@ -122,7 +119,7 @@ namespace assignment {
     delete removed_node;
 
     // уменьшаем размер списка
-    size_ -= 1;
+    size_--;
 
     return removed_value;
   }
@@ -169,7 +166,7 @@ namespace assignment {
         return curr_index;
       }
 
-      curr_index += 1;
+      curr_index++;
     }
 
     return std::nullopt;
@@ -210,7 +207,7 @@ namespace assignment {
   Node* LinkedList::FindNode(int index) const {
 
     // проверка на выход за границы списка
-    if (index < 0 || index >= size_) {
+    if (index < 0 or index >= size_) {
       return nullptr;
     }
 

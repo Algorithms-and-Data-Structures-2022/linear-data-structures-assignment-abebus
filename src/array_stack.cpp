@@ -12,68 +12,50 @@ namespace assignment {
       throw std::invalid_argument("capacity is not positive");
     }
 
-    // устанавливаем емкость стека
     capacity_ = capacity;
-
-    // выделяем участок памяти под стек
     data_ = new int[capacity];
-
-    // инициализируем элементы стека нулевым значением
     std::fill(data_, data_ + capacity, 0);
   }
 
   ArrayStack::~ArrayStack() {
 
-    // высвобождаем выделенную память
     delete[] data_;
-
-    // обнуляем поля
-    size_ = 0;
+    Clear();
     capacity_ = 0;
     data_ = nullptr;
   }
 
   void ArrayStack::Push(int value) {
 
-    // расширяем емкость стека при заполнении
     if (size_ == capacity_) {
       Resize(capacity_ + kCapacityGrowthCoefficient);
     }
 
-    // добавляем элемент на вершину стека (конец массива)
     data_[size_] = value;
-
-    // увеличиваем размер стека
-    size_ += 1;
+    size_++;
   }
 
   bool ArrayStack::Pop() {
 
-    // операция невозможна (пустой стек)
     if (size_ == 0) {
       return false;
     }
 
-    // спускаем вершину стека
-    size_ -= 1;
-
+    size_--;
     return true;
   }
 
   void ArrayStack::Clear() {
 
-    // обнуляем вершину стека
     size_ = 0;
   }
 
   std::optional<int> ArrayStack::Peek() const {
 
-    // стек пустой
     if (size_ == 0) {
       return std::nullopt;
     }
 
-    // возвращаем элемент на вершине стека
     return data_[size_ - 1];
   }
 
@@ -91,26 +73,14 @@ namespace assignment {
 
   bool ArrayStack::Resize(int new_capacity) {
 
-    // "новая" емкость должна быть больше "текущей"
     if (new_capacity <= capacity_) {
       return false;
     }
 
-    // выделяем "новый" блок памяти большего размера
     int* new_data = new int[new_capacity];
-
-    // копируем данные из "текущего" блока памяти в "новый"
     std::copy(data_, data_ + capacity_, new_data);
-
-    // высвобождаем "текущий" блок памяти
     delete[] data_;
-
-    // сохраняем адрес на "новый" блок памяти
     data_ = new_data;
-
-    // устанавливаем "новую" емкость стека
-    capacity_ = new_capacity;
-
     return true;
   }
 
